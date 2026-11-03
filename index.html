@@ -85,7 +85,7 @@ a{color:#1F6FB5}a:hover{color:#175A93}
 <span style="padding: 6px 14px; border: 1px solid #D0D5DB; border-radius: 999px">Popular</span>
 <span style="padding: 6px 14px; border: 1px solid #D0D5DB; border-radius: 999px">What's new</span>
 </div>
-<section aria-labelledby="owndata" style="width: 100%; max-width: 1150px; box-sizing: border-box; border: 1px solid #1F6FB5; background: #F4F8FD; border-radius: 12px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px">
+<section id="trial-card" aria-labelledby="owndata" style="width: 100%; max-width: 1150px; box-sizing: border-box; border: 1px solid #1F6FB5; background: #F4F8FD; border-radius: 12px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px">
 <div style="flex: 999 1 420px; display: flex; flex-direction: column; gap: 9px">
 <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #E3ECF7; color: #1A4F86; font-size: 12px; font-weight: 600">Recommended for your trial</span>
 <h2 id="owndata" style="margin: 0; font-size: 18px; font-weight: 700">Test it on your own data</h2>
@@ -98,6 +98,7 @@ a{color:#1F6FB5}a:hover{color:#175A93}
 </div>
 <div style="flex: 1 1 200px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
 <a href="#upload" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 8px; background: #1F6FB5; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">Upload a file</a>
+<button type="button" onclick="document.getElementById('trial-card').style.display='none'" style="padding: 4px 2px; border: 0; background: none; color: #1F6FB5; font: inherit; font-size: 13px; cursor: pointer">Skip for now</button>
 
 </div>
 </section>
@@ -538,7 +539,7 @@ a{color:#1F6FB5}a:hover{color:#175A93}
 <span style="padding: 4px 10px; color: #4B5563">Chat</span>
 </div>
 </div>
-<a href="#home" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 6px; border: 1px solid #D0D5DB; color: #1F2328; text-decoration: none; font-size: 13px">Start over</a>
+<a href="#home" onclick="document.getElementById('trial-card').style.display=''" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 6px; border: 1px solid #D0D5DB; color: #1F2328; text-decoration: none; font-size: 13px">Start over</a>
 </main>
 <aside aria-label="Setup" style="flex: 1 1 300px; max-width: 380px; border-left: 1px solid #EEF0F3; padding: 18px; display: flex; flex-direction: column; gap: 12px">
 <div style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
