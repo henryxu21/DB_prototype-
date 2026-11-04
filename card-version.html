@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guided Path · Concept Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#1F2328;background:#FFFFFF}
+a{color:#1F6FB5}a:hover{color:#175A93}
+</style>
+<style>.screen{display:none}</style>
+</head>
+<body>
+<section id="home" class="screen">
+<div style="min-height: 800px; display: flex; flex-direction: column; background: #FFFFFF">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 16px; border-bottom: 1px solid #E5E7EB">
+<div style="flex: 0 0 200px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 5px; background: #D1D5DB"></span>Workspace</div>
+<input aria-label="Search" placeholder="Search data, notebooks, recents, and more…" style="flex: 1 1 300px; max-width: 560px; margin: 0 auto; height: 34px; padding: 0 12px; border: 1px solid #D0D5DB; border-radius: 8px; font: inherit; font-size: 13px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF4E5; color: #8A4B00; font-weight: 600">Concept prototype</span>
+<span style="padding: 5px 10px; border-radius: 8px; background: #E8F1FB; color: #1A4F86; font-weight: 500">Manage Trial</span>
+<span style="color: #2B3138">workspace ▾</span>
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">H</span>
+</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<nav aria-label="Main" style="flex: 1 1 190px; max-width: 220px; background: #F7F8FA; border-right: 1px solid #E5E7EB; padding: 12px 10px; display: flex; flex-direction: column; gap: 1px; font-size: 13.5px; color: #2B3138">
+<div style="margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; background: #ECEEF1; font-weight: 600">+ New</div>
+<div style="padding: 6px 10px">Workspace</div>
+<div style="padding: 6px 10px">Recents</div>
+<div style="padding: 6px 10px">Catalog</div>
+<div style="padding: 6px 10px">Jobs &amp; Pipelines</div>
+<div style="padding: 6px 10px">Compute</div>
+<div style="padding: 6px 10px">Discover</div>
+<div style="padding: 6px 10px">Marketplace</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">SQL</div>
+<div style="padding: 6px 10px">SQL Editor</div>
+<div style="padding: 6px 10px">Queries</div>
+<div style="padding: 6px 10px">Dashboards</div>
+<div style="padding: 6px 10px">Genie Agents</div>
+<div style="padding: 6px 10px">Alerts</div>
+<div style="padding: 6px 10px">Query History</div>
+<div style="padding: 6px 10px">SQL Warehouses</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">Data Engineering</div>
+<div style="padding: 6px 10px">Runs</div>
+<div style="padding: 6px 10px">Data Ingestion</div>
+<div style="padding: 6px 10px">Visual Data Prep</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">AI/ML</div>
+<div style="padding: 6px 10px">Playground</div>
+<div style="padding: 6px 10px">Agents</div>
+<div style="padding: 6px 10px">Experiments</div>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 44px 32px; display: flex; flex-direction: column; align-items: center; gap: 26px">
+<h1 style="margin: 0; font-size: 22px; font-weight: 600">Welcome</h1>
+<div style="width: 100%; max-width: 770px; box-sizing: border-box; border: 1px solid #DDE1E6; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04)">
+<input aria-label="Ask anything" placeholder="Ask anything..." style="height: 30px; border: none; font: inherit; font-size: 14px; outline: none">
+<div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px">
+<span style="padding: 5px 12px; border: 1px solid #C9CED5; border-radius: 999px; font-weight: 500">Ask</span>
+<span style="padding: 5px 12px; color: #3A424D">Search</span>
+<span style="padding: 5px 12px; color: #3A424D">Code</span>
+</div>
+</div>
+<div style="width: 100%; max-width: 1150px; display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 280px; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 30px; height: 30px; border-radius: 6px; background: #0F766E"></span><span style="font-weight: 600; font-size: 14px">Converse with your data using natural language</span></div>
+<div style="font-size: 13.5px; color: #4B5563; line-height: 1.5">Ask Genie natural language questions about sales and inventory data from a fictional bakery.</div>
+<span style="align-self: flex-start; padding: 6px 12px; border: 1px solid #C9CED5; border-radius: 6px; font-size: 13px">Start conversing ↗</span>
+</div>
+<div style="flex: 1 1 280px; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 30px; height: 30px; border-radius: 6px; background: #0F766E"></span><span style="font-weight: 600; font-size: 14px">Explore data and share insights with Notebooks</span></div>
+<div style="font-size: 13.5px; color: #4B5563; line-height: 1.5">Learn how to explore data, write queries, and visualize results, all in one place.</div>
+<span style="align-self: flex-start; padding: 6px 12px; border: 1px solid #C9CED5; border-radius: 6px; font-size: 13px">Start exploring ↗</span>
+</div>
+<div style="flex: 1 1 280px; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 30px; height: 30px; border-radius: 6px; background: #0F766E"></span><span style="font-weight: 600; font-size: 14px">Build your first AI agent</span></div>
+<div style="font-size: 13.5px; color: #4B5563; line-height: 1.5">Create simple functions, then build an AI agent that uses them.</div>
+<span style="align-self: flex-start; padding: 6px 12px; border: 1px solid #C9CED5; border-radius: 6px; font-size: 13px">Start building ↗</span>
+</div>
+</div>
+<div style="width: 100%; max-width: 1150px; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px">
+<span style="padding: 6px 14px; border: 2px solid #1F6FB5; border-radius: 999px; background: #EEF5FC; font-weight: 500">Suggested</span>
+<span style="padding: 6px 14px; border: 1px solid #D0D5DB; border-radius: 999px">Favorites</span>
+<span style="padding: 6px 14px; border: 1px solid #D0D5DB; border-radius: 999px">Popular</span>
+<span style="padding: 6px 14px; border: 1px solid #D0D5DB; border-radius: 999px">What's new</span>
+</div>
+<section id="trial-card" aria-labelledby="owndata" style="width: 100%; max-width: 1150px; box-sizing: border-box; border: 1px solid #1F6FB5; background: #F4F8FD; border-radius: 12px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px">
+<div style="flex: 999 1 420px; display: flex; flex-direction: column; gap: 9px">
+<span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #E3ECF7; color: #1A4F86; font-size: 12px; font-weight: 600">Recommended for your trial</span>
+<h2 id="owndata" style="margin: 0; font-size: 18px; font-weight: 700">Test it on your own data</h2>
+<p style="margin: 0; font-size: 14px; color: #3A424D; line-height: 1.55">Upload a CSV or Excel file. We turn it into a table you can query, then open Genie on it so you can ask your first real question.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: #3A424D; font-weight: 500">
+<span>1. Upload</span>
+<span>2. Check the preview</span>
+<span>3. Ask a question</span>
+</div>
+</div>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
+<a href="#upload" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 8px; background: #1F6FB5; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">Upload a file</a>
+<button type="button" onclick="document.getElementById('trial-card').style.display='none'" style="padding: 4px 2px; border: 0; background: none; color: #1F6FB5; font: inherit; font-size: 13px; cursor: pointer">Skip for now</button>
+
+</div>
+</section>
+</main>
+</div>
+</div>
+</section>
+<section id="upload" class="screen">
+<div style="min-height: 800px; display: flex; flex-direction: column; background: #FFFFFF">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 16px; border-bottom: 1px solid #E5E7EB">
+<div style="flex: 0 0 200px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 5px; background: #D1D5DB"></span>Workspace</div>
+<input aria-label="Search" placeholder="Search data, notebooks, recents, and more…" style="flex: 1 1 300px; max-width: 560px; margin: 0 auto; height: 34px; padding: 0 12px; border: 1px solid #D0D5DB; border-radius: 8px; font: inherit; font-size: 13px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF4E5; color: #8A4B00; font-weight: 600">Concept prototype</span>
+<span style="padding: 5px 10px; border-radius: 8px; background: #E8F1FB; color: #1A4F86; font-weight: 500">Manage Trial</span>
+<span style="color: #2B3138">workspace ▾</span>
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">H</span>
+</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<nav aria-label="Main" style="flex: 1 1 190px; max-width: 220px; background: #F7F8FA; border-right: 1px solid #E5E7EB; padding: 12px 10px; display: flex; flex-direction: column; gap: 1px; font-size: 13.5px; color: #2B3138">
+<div style="margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; background: #ECEEF1; font-weight: 600">+ New</div>
+<div style="padding: 6px 10px">Workspace</div>
+<div style="padding: 6px 10px">Recents</div>
+<div style="padding: 6px 10px">Catalog</div>
+<div style="padding: 6px 10px">Jobs &amp; Pipelines</div>
+<div style="padding: 6px 10px">Compute</div>
+<div style="padding: 6px 10px">Discover</div>
+<div style="padding: 6px 10px">Marketplace</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">SQL</div>
+<div style="padding: 6px 10px">SQL Editor</div>
+<div style="padding: 6px 10px">Queries</div>
+<div style="padding: 6px 10px">Dashboards</div>
+<div style="padding: 6px 10px">Genie Agents</div>
+<div style="padding: 6px 10px">Alerts</div>
+<div style="padding: 6px 10px">Query History</div>
+<div style="padding: 6px 10px">SQL Warehouses</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">Data Engineering</div>
+<div style="padding: 6px 10px">Runs</div>
+<div style="padding: 6px 10px; border-radius: 6px; background: #E3ECF7; color: #1A4F86; font-weight: 600">Data Ingestion</div>
+<div style="padding: 6px 10px">Visual Data Prep</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">AI/ML</div>
+<div style="padding: 6px 10px">Playground</div>
+<div style="padding: 6px 10px">Agents</div>
+<div style="padding: 6px 10px">Experiments</div>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 18px 28px 28px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 10px; background: #F4F8FD; border: 1px solid #C9DCF1; font-size: 13px">
+<span style="font-weight: 600; color: #1A4F86">Start with your own data</span>
+<span style="padding: 3px 10px; border-radius: 999px; background: #1F6FB5; color: #FFFFFF; font-weight: 600">1. Upload</span>
+<span style="color: #4B5563">2. Check the preview</span>
+<span style="color: #4B5563">3. Ask a question</span>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="#home" style="font-size: 13px; text-decoration: none">Home ›</a>
+<h1 style="margin: 0; font-size: 22px; font-weight: 600">Create or modify table from files</h1>
+</div>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 8px; font-size: 13px"><span style="color: #15803D">●</span> Serverless Starter Warehouse ▾</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px">
+<span style="padding: 6px 12px; border: 2px solid #1F6FB5; border-radius: 999px; background: #E8F1FB; font-weight: 500">File upload</span>
+<span style="padding: 6px 12px; border: 1px solid #D0D5DB; border-radius: 999px; color: #4B5563">Volume</span>
+<span style="padding: 6px 12px; border: 1px solid #D0D5DB; border-radius: 999px; color: #4B5563">S3</span>
+</div>
+<a href="#preview" style="max-width: 860px; min-height: 300px; box-sizing: border-box; border: 2px dashed #D0D5DB; border-radius: 10px; padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; color: #1F2328; text-decoration: none; font-size: 13.5px">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path></svg>
+<span>Drop one or more files here, or <span style="color: #1F6FB5">browse</span></span>
+<span>Upload up to 10 files (max total upload size 2GB)</span>
+<span style="font-weight: 600">Supported file formats: CSV, TSV, JSON, Avro, Parquet, text, XML, or Excel</span>
+</a>
+<div style="max-width: 860px; font-size: 13px; color: #4B5563; line-height: 1.5">Your file becomes a table in workspace / default that you can ask Genie about.</div>
+</main>
+</div>
+</div>
+</section>
+<section id="preview" class="screen">
+<div style="min-height: 800px; display: flex; flex-direction: column; background: #FFFFFF">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 16px; border-bottom: 1px solid #E5E7EB">
+<div style="flex: 0 0 200px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 5px; background: #D1D5DB"></span>Workspace</div>
+<input aria-label="Search" placeholder="Search data, notebooks, recents, and more…" style="flex: 1 1 300px; max-width: 560px; margin: 0 auto; height: 34px; padding: 0 12px; border: 1px solid #D0D5DB; border-radius: 8px; font: inherit; font-size: 13px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF4E5; color: #8A4B00; font-weight: 600">Concept prototype</span>
+<span style="padding: 5px 10px; border-radius: 8px; background: #E8F1FB; color: #1A4F86; font-weight: 500">Manage Trial</span>
+<span style="color: #2B3138">workspace ▾</span>
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">H</span>
+</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<nav aria-label="Main" style="flex: 1 1 190px; max-width: 220px; background: #F7F8FA; border-right: 1px solid #E5E7EB; padding: 12px 10px; display: flex; flex-direction: column; gap: 1px; font-size: 13.5px; color: #2B3138">
+<div style="margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; background: #ECEEF1; font-weight: 600">+ New</div>
+<div style="padding: 6px 10px">Workspace</div>
+<div style="padding: 6px 10px">Recents</div>
+<div style="padding: 6px 10px">Catalog</div>
+<div style="padding: 6px 10px">Jobs &amp; Pipelines</div>
+<div style="padding: 6px 10px">Compute</div>
+<div style="padding: 6px 10px">Discover</div>
+<div style="padding: 6px 10px">Marketplace</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">SQL</div>
+<div style="padding: 6px 10px">SQL Editor</div>
+<div style="padding: 6px 10px">Queries</div>
+<div style="padding: 6px 10px">Dashboards</div>
+<div style="padding: 6px 10px">Genie Agents</div>
+<div style="padding: 6px 10px">Alerts</div>
+<div style="padding: 6px 10px">Query History</div>
+<div style="padding: 6px 10px">SQL Warehouses</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">Data Engineering</div>
+<div style="padding: 6px 10px">Runs</div>
+<div style="padding: 6px 10px; border-radius: 6px; background: #E3ECF7; color: #1A4F86; font-weight: 600">Data Ingestion</div>
+<div style="padding: 6px 10px">Visual Data Prep</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">AI/ML</div>
+<div style="padding: 6px 10px">Playground</div>
+<div style="padding: 6px 10px">Agents</div>
+<div style="padding: 6px 10px">Experiments</div>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; padding: 18px 28px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 10px; background: #F4F8FD; border: 1px solid #C9DCF1; font-size: 13px">
+<span style="font-weight: 600; color: #1A4F86">Start with your own data</span>
+<span style="color: #15803D; font-weight: 600">1. Upload ✓</span>
+<span style="padding: 3px 10px; border-radius: 999px; background: #1F6FB5; color: #FFFFFF; font-weight: 600">2. Check the preview</span>
+<span style="color: #4B5563">3. Ask a question</span>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="#upload" style="font-size: 13px; text-decoration: none">Add data ›</a>
+<h1 style="margin: 0; font-size: 22px; font-weight: 600">Create or modify table from files</h1>
+</div>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 8px; font-size: 13px"><span style="color: #15803D">●</span> Serverless Starter Warehouse ▾</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+<span style="flex: 1 1 320px; max-width: 560px; padding: 9px 14px; border-radius: 8px; background: #F3F4F6; font-size: 13px"><b>sample_revenue_export.xlsx uploaded</b> 15.83KB</span>
+<span style="padding: 8px 12px; border: 1px solid #D0D5DB; border-radius: 6px; font-size: 13px">Create new table ▾</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px">
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Catalog: workspace ▾</span>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Schema: default ▾</span>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Table name: sample_revenue_export</span>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Sheet: Revenue Export ▾</span>
+<span style="padding: 7px 4px">☑ First row contains the header</span>
+<span style="padding: 7px 4px; color: #1F6FB5">Advanced attributes</span>
+<span style="margin-left: auto; padding: 7px 0; color: #4B5563">Previewing 50 rows, 13 columns</span>
+</div>
+<div style="overflow-x: auto; border: 1px solid #E5E7EB; border-radius: 8px">
+<table style="border-collapse: collapse; width: 100%; min-width: 980px; font-size: 13px">
+<thead>
+<tr style="background: #F7F8FA; text-align: left">
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">date</span>Month</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">Abc</span>Region</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">Abc</span>Account ID</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">Abc</span>Product Line</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">Abc</span>Channel</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">123</span>Orders</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">.00</span>Gross Revenue</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">.00</span>Net Revenue</th>
+<th scope="col" style="padding: 10px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; font-weight: 600"><span style="color: #6B7280; font-weight: 500; margin-right: 8px">Abc</span>Invoice Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Northeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00412</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Bedding</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Online</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">387</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">40520.2</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">39465.3</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">01/05/2026</td>
+</tr>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Northeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00412</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Kitchen</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Retail</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">394</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">40441.68</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">39480.58</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">01/12/2026</td>
+</tr>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Northeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00412</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Outdoor</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Online</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">290</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">28288.19</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">27625.17</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">TBD</td>
+</tr>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Northeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00412</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Lighting</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Wholesale</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">175</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">19280.99</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">18567.96</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">01/05/2026</td>
+</tr>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Northeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00412</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Bath</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Retail</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">180</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">18521.33</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">17683.7</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">01/04/2026</td>
+</tr>
+<tr>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3; white-space: nowrap">2026-01-01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Southeast</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">00587</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Bedding</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">Online</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">373</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">42647.66</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">41118.01</td>
+<td style="padding: 9px 12px; border-bottom: 1px solid #F0F1F3">01/04/2026</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 6px; border-top: 1px solid #EEF0F3">
+<a href="#upload" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 6px; text-decoration: none; font-size: 14px">Cancel</a>
+<a href="#table-ready" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 20px; border-radius: 6px; background: #1F6FB5; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Create table</a>
+</div>
+</main>
+</div>
+</div>
+</section>
+<section id="table-ready" class="screen">
+<div style="min-height: 800px; display: flex; flex-direction: column; background: #FFFFFF">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 16px; border-bottom: 1px solid #E5E7EB">
+<div style="flex: 0 0 200px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 5px; background: #D1D5DB"></span>Workspace</div>
+<input aria-label="Search" placeholder="Search data, notebooks, recents, and more…" style="flex: 1 1 300px; max-width: 560px; margin: 0 auto; height: 34px; padding: 0 12px; border: 1px solid #D0D5DB; border-radius: 8px; font: inherit; font-size: 13px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF4E5; color: #8A4B00; font-weight: 600">Concept prototype</span>
+<span style="padding: 5px 10px; border-radius: 8px; background: #E8F1FB; color: #1A4F86; font-weight: 500">Manage Trial</span>
+<span style="color: #2B3138">workspace ▾</span>
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">H</span>
+</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<nav aria-label="Main" style="flex: 1 1 190px; max-width: 220px; background: #F7F8FA; border-right: 1px solid #E5E7EB; padding: 12px 10px; display: flex; flex-direction: column; gap: 1px; font-size: 13.5px; color: #2B3138">
+<div style="margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; background: #ECEEF1; font-weight: 600">+ New</div>
+<div style="padding: 6px 10px">Workspace</div>
+<div style="padding: 6px 10px">Recents</div>
+<div style="padding: 6px 10px; border-radius: 6px; background: #E3ECF7; color: #1A4F86; font-weight: 600">Catalog</div>
+<div style="padding: 6px 10px">Jobs &amp; Pipelines</div>
+<div style="padding: 6px 10px">Compute</div>
+<div style="padding: 6px 10px">Discover</div>
+<div style="padding: 6px 10px">Marketplace</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">SQL</div>
+<div style="padding: 6px 10px">SQL Editor</div>
+<div style="padding: 6px 10px">Queries</div>
+<div style="padding: 6px 10px">Dashboards</div>
+<div style="padding: 6px 10px">Genie Agents</div>
+<div style="padding: 6px 10px">Alerts</div>
+<div style="padding: 6px 10px">Query History</div>
+<div style="padding: 6px 10px">SQL Warehouses</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">Data Engineering</div>
+<div style="padding: 6px 10px">Runs</div>
+<div style="padding: 6px 10px">Data Ingestion</div>
+<div style="padding: 6px 10px">Visual Data Prep</div>
+</nav>
+<aside aria-label="Catalog tree" style="flex: 1 1 220px; max-width: 260px; border-right: 1px solid #E5E7EB; padding: 14px 12px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #2B3138">
+<div style="font-weight: 600; font-size: 14px; padding-bottom: 6px">Catalog</div>
+<div style="padding: 3px 4px">▾ My organization</div>
+<div style="padding: 3px 4px 3px 18px">▾ workspace</div>
+<div style="padding: 3px 4px 3px 32px">▾ default</div>
+<div style="padding: 3px 4px 3px 46px">▾ Tables (1)</div>
+<div style="padding: 4px 6px 4px 60px; border-radius: 6px; background: #DCE8F6; color: #1A4F86; font-weight: 600">sample_revenue_export</div>
+<div style="padding: 3px 4px 3px 32px; color: #6B7280">› information_schema</div>
+<div style="padding: 3px 4px 3px 18px; color: #6B7280">› system</div>
+<div style="padding: 3px 4px; color: #6B7280">› Shares received</div>
+</aside>
+<main style="flex: 999 1 480px; min-width: 0; padding: 16px 26px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 13px; color: #1F6FB5">Catalog Explorer › workspace › default ›</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<h1 style="margin: 0; font-size: 22px; font-weight: 600">sample_revenue_export</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px">
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Open in a dashboard ▾</span>
+<span style="padding: 7px 12px; border: 1px solid #D0D5DB; border-radius: 6px">Share ▾</span>
+<span style="padding: 7px 12px; border-radius: 6px; background: #1F6FB5; color: #FFFFFF; font-weight: 600">Create ▾</span>
+</div>
+</div>
+<section aria-labelledby="ready" style="border: 1px solid #B7DCC4; background: #F1FAF4; border-radius: 10px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<div style="flex: 999 1 320px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<h2 id="ready" style="margin: 0; font-size: 16px; font-weight: 700">Your table is ready</h2>
+<span style="padding: 2px 8px; border-radius: 999px; background: #1F6FB5; color: #FFFFFF; font-size: 12px; font-weight: 600">3. Ask a question</span>
+</div>
+<div style="font-size: 13px; color: #3A424D">Saved to workspace / default · 180 rows · 13 columns. Find it any time in Catalog.</div>
+</div>
+<div style="flex: 1 1 260px; display: flex; flex-wrap: wrap; gap: 10px">
+<a href="#genie" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 18px; border-radius: 6px; background: #1F6FB5; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Ask questions about this data</a>
+<button type="button" style="min-height: 40px; padding: 0 14px; border-radius: 6px; border: 1px solid #D0D5DB; background: #FFFFFF; color: #1F2328; font: inherit; font-size: 13px">Open in a notebook</button>
+
+</div>
+</section>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; border-bottom: 1px solid #E5E7EB">
+<span style="padding: 8px 0; border-bottom: 2px solid #1F6FB5; font-weight: 600">Overview</span>
+<span style="padding: 8px 0; color: #4B5563">Sample Data</span>
+<span style="padding: 8px 0; color: #4B5563">Details</span>
+<span style="padding: 8px 0; color: #4B5563">Permissions</span>
+<span style="padding: 8px 0; color: #4B5563">History</span>
+<span style="padding: 8px 0; color: #4B5563">Lineage</span>
+<span style="padding: 8px 0; color: #4B5563">Insights</span>
+<span style="padding: 8px 0; color: #4B5563">Quality</span>
+</div>
+<div style="overflow-x: auto; border: 1px solid #E5E7EB; border-radius: 8px">
+<table style="border-collapse: collapse; width: 100%; min-width: 420px; font-size: 13px">
+<thead><tr style="background: #F7F8FA; text-align: left"><th scope="col" style="padding: 9px 12px; font-weight: 600">Column</th><th scope="col" style="padding: 9px 12px; font-weight: 600">Type</th></tr></thead>
+<tbody>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Month</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">timestamp</td></tr>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Region</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">string</td></tr>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Account ID</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">string</td></tr>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Product Line</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">string</td></tr>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Channel</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">string</td></tr>
+<tr><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3">Orders</td><td style="padding: 8px 12px; border-top: 1px solid #F0F1F3; color: #4B5563">bigint</td></tr>
+</tbody>
+</table>
+</div>
+</main>
+</div>
+</div>
+</section>
+<section id="genie" class="screen">
+<div style="min-height: 800px; display: flex; flex-direction: column; background: #FFFFFF">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 8px 16px; border-bottom: 1px solid #E5E7EB">
+<div style="flex: 0 0 200px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 5px; background: #D1D5DB"></span>Workspace</div>
+<input aria-label="Search" placeholder="Search data, notebooks, recents, and more…" style="flex: 1 1 300px; max-width: 560px; margin: 0 auto; height: 34px; padding: 0 12px; border: 1px solid #D0D5DB; border-radius: 8px; font: inherit; font-size: 13px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #FFF4E5; color: #8A4B00; font-weight: 600">Concept prototype</span>
+<span style="padding: 5px 10px; border-radius: 8px; background: #E8F1FB; color: #1A4F86; font-weight: 500">Manage Trial</span>
+<span style="color: #2B3138">workspace ▾</span>
+<span aria-hidden="true" style="width: 26px; height: 26px; border-radius: 50%; background: #7C3AED; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">H</span>
+</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<nav aria-label="Main" style="flex: 1 1 190px; max-width: 220px; background: #F7F8FA; border-right: 1px solid #E5E7EB; padding: 12px 10px; display: flex; flex-direction: column; gap: 1px; font-size: 13.5px; color: #2B3138">
+<div style="margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; background: #ECEEF1; font-weight: 600">+ New</div>
+<div style="padding: 6px 10px">Workspace</div>
+<div style="padding: 6px 10px">Recents</div>
+<div style="padding: 6px 10px">Catalog</div>
+<div style="padding: 6px 10px">Jobs &amp; Pipelines</div>
+<div style="padding: 6px 10px">Compute</div>
+<div style="padding: 6px 10px">Discover</div>
+<div style="padding: 6px 10px">Marketplace</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">SQL</div>
+<div style="padding: 6px 10px">SQL Editor</div>
+<div style="padding: 6px 10px">Queries</div>
+<div style="padding: 6px 10px">Dashboards</div>
+<div style="padding: 6px 10px; border-radius: 6px; background: #E3ECF7; color: #1A4F86; font-weight: 600">Genie Agents</div>
+<div style="padding: 6px 10px">Alerts</div>
+<div style="padding: 6px 10px">Query History</div>
+<div style="padding: 6px 10px">SQL Warehouses</div>
+<div style="padding: 12px 10px 4px; font-size: 12px; color: #5B6470">Data Engineering</div>
+<div style="padding: 6px 10px">Runs</div>
+<div style="padding: 6px 10px">Data Ingestion</div>
+<div style="padding: 6px 10px">Visual Data Prep</div>
+</nav>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 20px; border-bottom: 1px solid #EEF0F3; font-size: 13px">
+<div style="display: flex; gap: 4px; padding: 3px; border: 1px solid #E5E7EB; border-radius: 999px">
+<span style="padding: 5px 12px; border-radius: 999px; border: 1px solid #C9CED5; font-weight: 500">Chat</span>
+<span style="padding: 5px 12px; color: #4B5563">Monitor</span>
+<span style="padding: 5px 12px; color: #4B5563">Benchmark</span>
+</div>
+<div style="display: flex; gap: 8px">
+<span style="padding: 7px 12px; border: 1px solid #1F6FB5; border-radius: 999px; color: #1A4F86; font-weight: 500">Configure</span>
+<span style="padding: 7px 14px; border-radius: 999px; background: #1F6FB5; color: #FFFFFF; font-weight: 600">Share</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; flex: 1 1 auto">
+<main style="flex: 999 1 460px; min-width: 0; padding: 22px 26px; display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-size: 22px; font-weight: 700; text-align: center">Revenue Analysis</h1>
+<div style="align-self: flex-end; max-width: 440px; padding: 10px 14px; border-radius: 14px; background: #EEF1F5; font-size: 14px">What drove September's revenue change?</div>
+<div style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 14px; line-height: 1.6">Net revenue fell 8.6% (about $52.2K) from August to September. Outdoor fell in every region as its summer lift ended. <b>West / Outdoor fell the most</b>, down about $19.8K, roughly 38% of the total drop.</p>
+<div style="display: flex; flex-direction: column; gap: 9px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px">
+<span style="flex: 0 0 140px">West / Outdoor</span>
+<span style="flex: 1 1 160px; height: 12px; background: #F1F3F6; border-radius: 4px; display: flex">
+<span style="display:block;height:12px;border-radius:4px;width:100%;background:#C2410C"></span>
+</span>
+<span style="flex: 0 0 60px; text-align: right; font-weight: 600">−$19.8K</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px">
+<span style="flex: 0 0 140px">Southeast / Outdoor</span>
+<span style="flex: 1 1 160px; height: 12px; background: #F1F3F6; border-radius: 4px; display: flex">
+<span style="display:block;height:12px;border-radius:4px;width:54%;background:#9AA3AF"></span>
+</span>
+<span style="flex: 0 0 60px; text-align: right; font-weight: 600">−$10.6K</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px">
+<span style="flex: 0 0 140px">Northeast / Outdoor</span>
+<span style="flex: 1 1 160px; height: 12px; background: #F1F3F6; border-radius: 4px; display: flex">
+<span style="display:block;height:12px;border-radius:4px;width:51%;background:#9AA3AF"></span>
+</span>
+<span style="flex: 0 0 60px; text-align: right; font-weight: 600">−$10.2K</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 12.5px">
+<span style="flex: 0 0 140px">Midwest / Outdoor</span>
+<span style="flex: 1 1 160px; height: 12px; background: #F1F3F6; border-radius: 4px; display: flex">
+<span style="display:block;height:12px;border-radius:4px;width:40%;background:#9AA3AF"></span>
+</span>
+<span style="flex: 0 0 60px; text-align: right; font-weight: 600">−$7.9K</span>
+</div>
+</div>
+</div>
+<div style="border: 1px solid #DDE1E6; border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 8px">
+<input aria-label="Ask your question" placeholder="Ask your question..." style="height: 30px; border: none; font: inherit; font-size: 14px; outline: none">
+<div style="display: flex; gap: 6px; font-size: 12.5px">
+<span style="padding: 4px 10px; border: 1px solid #C9CED5; border-radius: 999px; font-weight: 500">Agent</span>
+<span style="padding: 4px 10px; color: #4B5563">Chat</span>
+</div>
+</div>
+<a href="#home" onclick="document.getElementById('trial-card').style.display=''" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 6px; border: 1px solid #D0D5DB; color: #1F2328; text-decoration: none; font-size: 13px">Start over</a>
+</main>
+<aside aria-label="Setup" style="flex: 1 1 300px; max-width: 380px; border-left: 1px solid #EEF0F3; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+<div style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-size: 13.5px"><span style="font-weight: 600">Finish setting up your agent</span><span style="color: #4B5563">2 of 4</span></div>
+<div style="height: 6px; border-radius: 999px; background: #EEF0F3; display: flex"><span style="display: block; width: 50%; border-radius: 999px; background: #1F6FB5"></span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px">
+<div style="color: #6B7280; text-decoration: line-through">✓ Define agent details</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="color: #6B7280; text-decoration: line-through">✓ Identify relevant data</span>
+<span style="margin-left: 18px; padding: 6px 8px; border-radius: 6px; background: #F1FAF4; color: #14532D; font-size: 12.5px">Using sample_revenue_export, from your upload</span>
+</div>
+<div style="font-weight: 600">3 Prepare business context</div>
+<div>4 Add initial benchmarks</div>
+</div>
+</div>
+
+</aside>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+function show(){var id=(location.hash||'#home').slice(1);var found=false;
+document.querySelectorAll('.screen').forEach(function(s){var on=s.id===id;s.style.display=on?'block':'none';if(on)found=true;});
+if(!found){document.getElementById('home').style.display='block';}window.scrollTo(0,0);}
+window.addEventListener('hashchange',show);show();
+</script>
+</body>
+</html>
