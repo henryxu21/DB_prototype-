@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-th.warn,td.warn{background:#FEF3C7}th.warn em{color:#B45309}
 .menuwrap{position:relative;display:inline-block}.menu{display:none;position:absolute;right:0;top:40px;z-index:5;background:#fff;border:1px solid var(--line2);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:180px;padding:6px 0}.menu>*{display:block;padding:7px 14px;font-size:13.5px;color:var(--ink);text-decoration:none}.menu a:hover{background:var(--blueSoft)}
 .tpage{display:flex;gap:28px;flex-wrap:wrap}.tleft{flex:1 1 420px;min-width:0}.about{flex:0 0 240px;font-size:13px}.about dl{display:grid;grid-template-columns:100px 1fr;gap:8px;margin:0}.about dt{color:var(--muted)}.about dd{margin:0}
 .tip a.tl{color:var(--blue);cursor:pointer}
@@ -211,10 +210,10 @@ pre{background:#F6F7F9;border:1px solid var(--line);border-radius:6px;padding:10
   <div class="row" style="margin-top:14px"><span class="file" id="pvFile"><b>sample_revenue_export.xlsx uploaded</b> 15.83KB</span><span class="btn">Create new table ▾</span></div>
   <div class="fields"><span>Catalog: workspace ▾</span><span>Schema: default ▾</span><span id="pvName">Table name: sample_revenue_export</span><span id="pvSheet">Sheet: Revenue Export ▾</span><span style="border:0">☑ First row contains the header</span><span style="border:0;color:var(--blue)">Advanced attributes</span><span class="sp" style="border:0"></span><span style="border:0" class="muted" id="pvCount">Previewing 50 rows, 13 columns</span></div>
   <div class="tbl" id="t-prev"><table>
-    <tr><th><em>date</em>Month</th><th><em>Abc</em>Region</th><th><em>Abc</em>Account ID</th><th><em>Abc</em>Product Line</th><th><em>Abc</em>Channel</th><th><em>123</em>Orders</th><th><em>.00</em>Gross Revenue</th><th><em>.00</em>Refunds</th><th><em>.00</em>Net Revenue</th><th class="warn"><em>Abc ⚠</em>Invoice Date</th></tr>
+    <tr><th><em>date</em>Month</th><th><em>Abc</em>Region</th><th><em>Abc</em>Account ID</th><th><em>Abc</em>Product Line</th><th><em>Abc</em>Channel</th><th><em>123</em>Orders</th><th><em>.00</em>Gross Revenue</th><th><em>.00</em>Refunds</th><th><em>.00</em>Net Revenue</th><th><em>Abc</em>Invoice Date</th></tr>
     <tr><td>2026-01-01</td><td>Northeast</td><td>00412</td><td>Bedding</td><td>Online</td><td>387</td><td>40520.20</td><td>1054.90</td><td>39465.30</td><td>01/05/2026</td></tr>
     <tr><td>2026-01-01</td><td>Northeast</td><td>00412</td><td>Kitchen</td><td>Retail</td><td>394</td><td>40441.68</td><td>961.10</td><td>39480.58</td><td>01/12/2026</td></tr>
-    <tr><td>2026-01-01</td><td>Northeast</td><td>00412</td><td>Outdoor</td><td>Online</td><td>290</td><td>28288.19</td><td>663.02</td><td>27625.17</td><td class="warn">TBD</td></tr>
+    <tr><td>2026-01-01</td><td>Northeast</td><td>00412</td><td>Outdoor</td><td>Online</td><td>290</td><td>28288.19</td><td>663.02</td><td>27625.17</td><td>TBD</td></tr>
     <tr><td>2026-01-01</td><td>Northeast</td><td>00412</td><td>Lighting</td><td>Wholesale</td><td>175</td><td>19280.99</td><td>713.03</td><td>18567.96</td><td>01/05/2026</td></tr>
     <tr><td>2026-01-01</td><td>Southeast</td><td>00587</td><td>Bedding</td><td>Online</td><td>373</td><td>42647.66</td><td>1529.65</td><td>41118.01</td><td>01/04/2026</td></tr>
   </table></div>
@@ -285,7 +284,6 @@ var T='workspace.default.sample_revenue_export';
 var S={tour:false,welcome:true,path:'own',asked:null,i:0};
 var NAV={home:'',upload:'Data Ingestion',preview:'Data Ingestion',table:'Catalog',genie:'Genie Agents','genie-sample':'Genie Agents',};
 var SIDE=[['New'],['Workspace'],['Recents'],['Catalog'],['Jobs & Pipelines'],['Compute'],['Discover'],['Marketplace'],['h','SQL'],['SQL Editor'],['Queries'],['Dashboards'],['Genie Agents'],['Alerts'],['Query History'],['SQL Warehouses'],['h','Data Engineering'],['Runs'],['Data Ingestion'],['Visual Data Prep']];
-var CHECK='Invoice Date was read as text because one row says "TBD". Fix that row or change the column type before saving, or date filters will not work. Your table saves to workspace / default.';
 var QA=[
  {q:"What drove September's revenue change?",
   a:"Net revenue fell 8.6% (about $52.2K) from August to September. Outdoor fell in every region. <b>West / Outdoor fell the most</b>, down about $19.8K, roughly 38% of the drop.",
@@ -302,16 +300,15 @@ var QA=[
 /* tour steps: screen, target, which of the 4 stages, text, and how it advances */
 var STEPS=[
  {sc:'upload',el:'#t-drop',st:0,h:'Upload a file you already use',p:'Drop a CSV or Excel file here, or click the box to browse. No file handy? Use the example file.',act:'file'},
- {sc:'preview',el:'#t-prev',st:1,h:'Check how your file was read',p:'{CHECK}',act:'next'},
- {sc:'preview',el:'#t-create',st:1,h:'Create your table',p:'Click Create table to save it.',act:'click'},
- {sc:'table',el:'#t-createbtn',st:2,h:'Your table is saved',p:'It lives at {T}, highlighted in the catalog on the left. Open Create to ask questions about it.',act:'click'},
+ {sc:'preview',el:'#t-create',st:1,h:'Save it as a table',p:'Databricks read your file and set a type for each column. The defaults work, so click Create table to save it to workspace / default.',act:'click'},
+ {sc:'table',el:'#t-createbtn',st:1,h:'Your table is saved',p:'It lives at {T}, highlighted in the catalog on the left. Open Create to ask questions about it.',act:'click'},
  {sc:'table',el:'#t-ask',st:2,h:'Choose Genie Agent',p:'This sets up a Genie Agent on your table only, so every answer comes from your data, not sample data.',act:'click'},
  {sc:'genie',el:'#chips',st:2,h:'Ask your first question',p:'A Genie Agent is set up on your table only. Pick a suggested question, or type your own below.',act:'ask'},
  {sc:'genie',el:'#convo .ans',st:2,h:'Check the answer',p:'This answer comes only from your table. Open Show SQL to see exactly how Genie got it.',act:'next'},
  {sc:'genie',el:'#t-share',st:3,h:'Share it with your team',p:'Share this Genie Agent so your analysts can ask their own questions, no SQL needed. Teammates also need read access to the table.<br><br>Prefer code, or want to build more on this table? <a class="tl">Explore in a notebook</a> · <a class="tl">Build an AI agent</a>',act:'finish'}
 ];
 var SAMPLE={sc:'genie-sample',el:'#t-nudge',st:0,h:'You are on sample data',p:'Sample data shows how Genie works. To see whether it works for your team, try the same thing on your own file.',act:'click'};
-var STAGES=['Upload','Check','Ask','Share'];
+var STAGES=['Upload','Save','Ask','Share'];
 
 function startTour(p){S.tour=true;S.welcome=false;S.path=p;
  if(p==='sample'){S.i=-1;go('#genie-sample')}else{S.i=0;go('#upload')}}
@@ -336,13 +333,13 @@ function tour(keep){var L=document.getElementById('tourLayer'),id=screenId();
  var s=cur(); if(s.sc!==id){L.innerHTML='';return}
  if(s.el==='#t-ask')document.getElementById('createMenu').style.display='block';
  var t=document.querySelector(s.el); if(!t){L.innerHTML='';return}
- if(!keep)t.scrollIntoView({block:'center'}); if(s.el==='#t-prev'){var w=t.querySelector('th.warn');t.scrollLeft=w?Math.max(0,w.offsetLeft-160):0;}
+ if(!keep)t.scrollIntoView({block:'center'});
  var r=t.getBoundingClientRect(),pad=6;
  var n=S.i===-1?0:S.i;
  var dots=STAGES.map(function(x,k){return '<i class="'+(k<=s.st&&S.i!==-1?'d':'')+'"></i>'}).join('');
  var btn=s.act==='file'?'<button class="btn" onclick="useExample()">Use example file</button>':s.act==='next'?'<button class="btn pri" onclick="nextStep()">Next</button>':(s.act==='finish'?'<button class="btn pri" onclick="S.tour=false;S.done=true;render()">Finish tour</button>':'');
  var back=(S.i>0)?'<button class="btn" onclick="back()">Back</button>':'';
- L.innerHTML='<div class="spot" style="left:'+(r.left-pad)+'px;top:'+(r.top-pad)+'px;width:'+(r.width+pad*2)+'px;height:'+(r.height+pad*2)+'px"></div><div class="tip" id="tip" role="dialog" aria-label="Trial guide"><div class="dots">'+dots+'</div><div class="k">'+(S.i===-1?'Sample data':'Step '+(s.st+1)+' of 4 · '+STAGES[s.st])+'</div><h3>'+s.h+'</h3><p>'+s.p.replace('{T}',esc(T)).replace('{CHECK}',CHECK)+'</p><div class="acts"><button class="skip" onclick="skipTour()">Skip tour</button><span class="sp"></span>'+back+btn+'</div></div>';
+ L.innerHTML='<div class="spot" style="left:'+(r.left-pad)+'px;top:'+(r.top-pad)+'px;width:'+(r.width+pad*2)+'px;height:'+(r.height+pad*2)+'px"></div><div class="tip" id="tip" role="dialog" aria-label="Trial guide"><div class="dots">'+dots+'</div><div class="k">'+(S.i===-1?'Sample data':'Step '+(s.st+1)+' of 4 · '+STAGES[s.st])+'</div><h3>'+s.h+'</h3><p>'+s.p.replace('{T}',esc(T))+'</p><div class="acts"><button class="skip" onclick="skipTour()">Skip tour</button><span class="sp"></span>'+back+btn+'</div></div>';
  var tip=document.getElementById('tip'),tw=tip.offsetWidth,th=tip.offsetHeight,vw=innerWidth,vh=innerHeight,x,y;
  if(r.bottom+16+th<vh){y=r.bottom+16}else if(r.top-16-th>0){y=r.top-16-th}else{y=Math.max(12,vh-th-12)}
  x=Math.min(Math.max(12,r.left+r.width/2-tw/2),vw-tw-12);
@@ -367,13 +364,13 @@ document.getElementById('chips').innerHTML=QA.map(function(x,i){return '<button 
 window.addEventListener('hashchange',render);window.addEventListener('resize',function(){if(S.tour)tour(true)});var _sr;window.addEventListener('scroll',function(){if(!S.tour)return;cancelAnimationFrame(_sr);_sr=requestAnimationFrame(function(){tour(true)})},{passive:true});
 /* ---------- real upload: parse the file in the browser and drive every screen from it ---------- */
 function esc(v){return String(v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-var QA_EX=QA, CHECK_EX=CHECK, T_EX=T, ORIG={};
+var QA_EX=QA, T_EX=T, ORIG={};
 ['pvFile','pvName','pvSheet','pvCount','t-prev','tbTree','tbName','tbDesc','tbSize','tbCols','gTitle','gScope'].forEach(function(id){ORIG[id]=document.getElementById(id).innerHTML});
 function setChips(){document.getElementById('chips').innerHTML=QA.map(function(x,i){return '<button class="qchip" onclick="ask('+i+')">'+esc(x.q)+'</button>'}).join('')}
 
 function useExample(){
   Object.keys(ORIG).forEach(function(id){document.getElementById(id).innerHTML=ORIG[id]});document.getElementById('pvSheet').style.display='';
-  QA=QA_EX;CHECK=CHECK_EX;T=T_EX;S.asked=null;setChips();
+  QA=QA_EX;T=T_EX;S.asked=null;setChips();
   document.getElementById('upErr').textContent='';
   if(S.tour)S.i=1;go('#preview');
 }
@@ -477,14 +474,8 @@ function showData(file,sheet,rows){
   if(sheet)document.getElementById('pvSheet').textContent='Sheet: '+sheet+' ▾';
   var shown=D.rows.slice(0,8);
   document.getElementById('pvCount').textContent='Previewing '+Math.min(50,D.rows.length)+' rows, '+cols.length+' columns';
-  document.getElementById('t-prev').innerHTML='<table><tr>'+cols.map(function(c){var w=c.warn||c.blank;return '<th'+(w?' class="warn"':'')+'><em>'+LABEL[c.type]+(w?' ⚠':'')+'</em>'+esc(c.name)+'</th>'}).join('')+'</tr>'+
-    shown.map(function(r){return '<tr>'+cols.map(function(c,i){var v=String(r[i]==null?'':r[i]).trim();var bad=c.warn&&c.bad.indexOf(v)>-1&&v!=='';return '<td'+(bad?' class="warn"':'')+'>'+esc(v)+'</td>'}).join('')+'</tr>'}).join('')+'</table>';
-  var warns=cols.filter(function(c){return c.warn}),unnamed=cols.filter(function(c){return c.blank&&c.filled});
-  var parts=[];
-  if(warns.length){var c=warns[0];parts.push(esc(c.name)+' was read as text because '+(c.badCount>1?c.badCount+' values':'one value')+' (like "'+esc(c.bad[0])+'") '+(c.badCount>1?'are':'is')+' not '+(c.warn==='date'?'a date':'a number')+'. Fix '+(c.badCount>1?'those rows':'that row')+' or change the column type before saving.'+(warns.length>1?' '+(warns.length-1)+' more column'+(warns.length>2?'s have':' has')+' the same problem.':''))}
-  if(unnamed.length)parts.push(unnamed.length+' column'+(unnamed.length>1?'s have':' has')+' no header and will be named '+unnamed.map(function(c){return esc(c.name)}).join(', ')+'.');
-  if(!parts.length)parts.push('Every column was read with the type its values suggest, so there is nothing to fix.');
-  CHECK=parts.join(' ')+' Your table saves to workspace / default.';
+  document.getElementById('t-prev').innerHTML='<table><tr>'+cols.map(function(c){return '<th><em>'+LABEL[c.type]+'</em>'+esc(c.name)+'</th>'}).join('')+'</tr>'+
+    shown.map(function(r){return '<tr>'+cols.map(function(c,i){var v=String(r[i]==null?'':r[i]).trim();return '<td>'+esc(v)+'</td>'}).join('')+'</tr>'}).join('')+'</table>';
   document.getElementById('tbTree').textContent=name;
   document.getElementById('tbName').textContent=name;
   var named=cols.filter(function(c){return !c.blank}).map(function(c){return c.name});
